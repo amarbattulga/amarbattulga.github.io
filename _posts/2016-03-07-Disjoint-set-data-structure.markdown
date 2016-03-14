@@ -5,7 +5,8 @@ date:   2016-03-07 16:24:00
 categories: algorithm
 ---
 
-Уг algorith-г сурсанаар Kruskal-н algorithm бичиж сурж болноо
+Уг **algorithm**-р сурсанаар **Kruskal algorithm**-г хэрэгжүүлээд сурчихлаа л гэсэн үг юм.
+
 **Бодлого**
 
 Өрөөнд `N` хүн байгаа. Хоёр хүнийг шууд буюу шууд бус байдлаар холбогдсон тохиолдолд найз гэнэ.
@@ -16,7 +17,9 @@ categories: algorithm
 
 `B` - `C` хоёр ямар нэгэн байдлаар найз ( Шууд эсвэл шууд бус байдлаар найз )
 
-байвал `A` - `C` хоёр нь найз юм
+байвал `A` - `C` хоёр нь найз юм.
+
+Тиймээс доорх хүсэлтүүдийг биелүүлдэг програм бичнэ үү.
 
 **Оролт:**
 
@@ -32,9 +35,9 @@ categories: algorithm
 
 **Гаралт:**
 
-`is_friend p1 p2` орж ирсэн агшин бүрд
+`is_friend p1 p2` гэсэн бүтэцтэй хүсэтл бүрд
 
-хэрэв `p1`, `p2` хоёр найз байх юм бол `"YES"` үгүй бол `"NO"`
+хэрэв `p1`, `p2` хоёр найз байх юм бол `"YES"` үгүй бол `"NO"` гэж хэвлэнэ
 
 **Жишээ оролm:**
 {% highlight python %}
@@ -66,7 +69,7 @@ void init(int n){
         parent[i] = i;
 }
 
-find find(int p1){
+int find(int p1){
     if (parent[p1] != p1)
         parent[p1] = find(parent[p1]);
     return parent[p1];
@@ -83,7 +86,10 @@ void is_friend(int p1, int p2){
 }
 {% endhighlight %}
 
-**Бодолт 2:** - Уг бодолт performance маш сайн бараг л шулуун хугацаанд ажилллана
+**Бодолт 2:**
+
+Уг бодолт performance маш сайн бараг л шулуун хугацаанд ажилллана
+
 {% highlight cpp %}
 
 vector<int> rank, parent;
@@ -122,5 +128,6 @@ void is_friend(int p1, int p2){
 }
 {% endhighlight %}
 
+Холбоос:
 
-[topcoder]: https://www.topcoder.com/community/data-science/data-science-tutorials/disjoint-set-data-structures/
+[Topcoder - Disjoint set data structures](https://www.topcoder.com/community/data-science/data-science-tutorials/disjoint-set-data-structures/)
