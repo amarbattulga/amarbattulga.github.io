@@ -61,6 +61,7 @@ YES # 1 3 Найзууд уу? Description: (1,2) найзууд мөн (2,3) н
 **Бодолт 1:**
 {% highlight cpp %}
 
+// Syntax алдаа байж болзошгүй :)
 vector<int> parent;
 
 void init(int n){
@@ -91,6 +92,8 @@ void is_friend(int p1, int p2){
 Уг бодолт performance маш сайн бараг л шулуун хугацаанд ажилллана
 
 {% highlight cpp %}
+
+// Syntax алдаа байж болзошгүй :)
 
 vector<int> rank, parent;
 
@@ -128,6 +131,17 @@ void is_friend(int p1, int p2){
 }
 {% endhighlight %}
 
-Холбоос:
 
-[Topcoder - Disjoint set data structures](https://www.topcoder.com/community/data-science/data-science-tutorials/disjoint-set-data-structures/)
+**Бодож болох бодлогууд**
+
+- [[ Spoj ] - Herding](http://www.spoj.com/problems/HERDING/){:target="blank"}
+
+
+- [[ Hackerrank ] - Merge Communities](https://www.hackerrank.com/challenges/merging-communities){:target="blank"}
+- [[ Hackerrank ] - Components in a graph](https://www.hackerrank.com/challenges/components-in-graph){:target="blank"}
+- [[ Hackerrank ] - Kundu and Tree](https://www.hackerrank.com/challenges/kundu-and-tree){:target="blank"}
+
+**Холбоос**:
+
+- [Topcoder - Disjoint-set data structures](https://www.topcoder.com/community/data-science/data-science-tutorials/disjoint-set-data-structures/){:target="blank"}
+- [Wikipedia - Disjoint-set data structure](https://en.wikipedia.org/wiki/Disjoint-set_data_structure){:target="blank"}
