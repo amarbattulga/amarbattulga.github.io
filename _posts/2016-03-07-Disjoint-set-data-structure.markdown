@@ -106,7 +106,7 @@ void init(int n){
     }
 }
 
-find find(int p1){
+int find(int p1){
     if (parent[p1] != p1)
         parent[p1] = find(parent[p1]);
     return parent[p1];
