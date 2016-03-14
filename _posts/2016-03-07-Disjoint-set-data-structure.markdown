@@ -82,7 +82,7 @@ void merge(int p1, int p2){
     parent[p1] = p2;
 }
 
-void is_friend(int p1, int p2){
+bool is_friend(int p1, int p2){
     return find(p1) == find(p2);
 }
 {% endhighlight %}
@@ -126,7 +126,7 @@ void merge(int p1, int p2){
         }
 }
 
-void is_friend(int p1, int p2){
+bool is_friend(int p1, int p2){
     return find(p1) == find(p2);
 }
 {% endhighlight %}
