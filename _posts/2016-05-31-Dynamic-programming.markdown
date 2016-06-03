@@ -33,20 +33,20 @@ DP-г сурахын тулд бодлогийн төлөвийг тодорхо
 
 Бидний түрүүвчинд **M** төгрөг байгаа ба бид бүх хувцаснуудас яг нэг, нэгийг аваад хамгийн ихдээ хэдэн төгрөг үрж чадах вэ? *(Мэдээж мөнгөн дүн M-с хэтэрч болохгүй)*
 
-C - Хувцасны тоо **C <= 20**
+G - Хувцасны тоо **G <= 20**
 
 K - Нэг хувцасны загварынх нь тоо **K <= 20**
 
 M - Мөнгөний хэмжээ **M <= 200**
 
 
-### Бодолт 1: Шунахай бодолт **( Буруу хариулт )**
-Санаа: хувцас бүрээс хамгийн үнэтэйг нь авах:
+### Бодолт 1: Шунахай бодолт ( [**Wrong answer**](#){:style="color:red"} )
+**Санаа:** хувцас бүрээс хамгийн үнэтэйг нь авах:
 
-### Бодолт 2: Бүрэн хайлт **( Хугацааны хязгаарлалт )**
+### Бодолт 2: Бүрэн хайлт **( Time limit exceeded )**
 20^20
 
-### Бодолт 3: Дээрээс доош DP [**( Тэнцэв )**](#){:style="color:green"}
+### Бодолт 3: Дээрээс доош DP ( [**Accepted**](#){:style="color:green"} )
 Бид энэ бодлогийг DP ашиглаж бодож болж байна. Учир уг бодлого DP бодлогонд байдаг доорх үндсэн 2 нөхцөлийг хангажээ.
 
 1. Бодлогийг биесээсээ хамааралгүй хэсгүүдэд хувааж болохуйц.
@@ -55,34 +55,53 @@ M - Мөнгөний хэмжээ **M <= 200**
 {% highlight cpp %}
 // Бичиглэлийн алдаа байз болзошгүй
 
-// reachable -> Хүрж болохуйц
-// clothes -> Хувцаснууд
-
-#include<bits/stdc++.h> // Нэг дор бүгдий
+#include<bits/stdc++.h>
 
 using namespace std;
 
-int C, M;
-vector< vector<int> > clothes;
+int G, M;
+int memo[200][200];
+vector< vector<int> > gList;
 
 // Оролт унших
 void init(){
-     // Хувцасны тоо
-     cin >> C;
-     clothes.resize(C);
+     cin >> M >> G;
 
-     // Үнэ
-     for (int i=0; i<C; i++){
+     gList.resize(G);
+
+     for (int i=0; i<G; i++){
      	 int K;
 	 cin >> K;
 	 
-	 clothes[i].resize(K);
+	 gList[i].resize(K);
 	 for (int j=0; j<K; k++)
-	     cin >> clothes[i][j];
+	     cin >> gList[i][j];
      }
+
+     // Set initial value
+     memset(memo, -1, sizeof(memo));
+}
+
+int shop(int money, int currentG){
+    if (money < 0)
+       return -1e6;
+
+    if (currentG == G)
+       return M - money;
+
+    if ( memo[money][currentG] != -1 )
+       return memo[money][currentG];
+
+    int ans = -1e6; // -1e6 == 1000000
+    for (int i=0; i<gList[currentG].size(); i++)
+    	ans = max(ans, shop(money - gList[currentG][i], currentG + 1));
+
+    memo[money][currenG] = ans;
+    return memo[money][currentG]
 }
 
 int main(){
     init();
+    cout << shop(M, G-1);
 }
 {% endhighlight %}
