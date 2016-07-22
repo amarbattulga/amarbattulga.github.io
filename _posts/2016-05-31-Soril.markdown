@@ -1,0 +1,91 @@
+---
+layout: post
+title:  "Сорил"
+date:   2016-07-22 10:00:00
+categories: algorithm
+---
+
+Уг сорил нь 3 бодлогоос бүрдэнэ.
+
+[INCDSESQ - spoj](http://www.spoj.com/problems/INCDSEQ/){:target="_blank"}
+
+N <= 10,000
+s1, s2, ..., sn 
+
+s массив доторх яг K урттай ялгаатай өсөх дарааллын тоог ол
+
+{% highlight python %}
+Input:
+  # N K
+  # s1, s2, ..., sn
+  4
+  1 2 2 10
+
+Output
+  1 # => { 1, 2, 10 }
+{% endhighlight %}
+  
+
+[RENT - spoj](http://www.spoj.com/problems/RENT/){:target="_blank"}
+
+МИАТ компанид 1 ширхэг онгож байгаа ба түүнийгээ түрээслэж мөнгө олох гэж байгаа.
+
+N ширхэг захиалга орж ирсэн, N < 10,000
+
+start: Si -> түрээслэж эхлэх хугацаа, 0 ≤ Si < 1,000,000
+duration: Di -> түрээслэх хугацаа, 0 < Di < 1,000,000
+cost: Ci -> түрээсд төлөх үнэ, Ci < 100,000
+
+S1, D1, C1
+S2, D2, C2
+...
+Sn, Dn, Cn
+
+**Давхцуулахгүйгээр түрээслээд олж болох хамгийн их мөнгийг тооцож олно уу**
+
+{% highlight python %}
+Input:
+  1
+  4
+  0 5 10
+  3 7 14
+  5 9 7
+  6 9 8
+Output:
+  18
+{% endhighlight %}
+
+[DOSA - spoj ](http://www.spoj.com/problems/DOSA/){:target="_blank"}
+
+0 < N <= 10^6
+0 < ai <= 10^9
+
+N уртай A массив өгөгджээ.
+
+Хамгийн багадаа хэдэн тоог өөрчлөөд өсөх дараалал болгож болох вэ.
+
+{% highlight python %}
+Input:
+  6
+  1 7 10 2 20 22
+
+Output:
+  1
+  # Тайлбар
+  # 2 -> 11
+  # 1, 7, 10, **11**, 20, 22
+{% endhighlight %}
+
+
+{% highlight python %}
+Input:
+  5
+  1 2 2 3 4 
+
+Output:
+  3
+  
+  # Тайлбар
+  # 1, 2, 3, 4, 5
+  # Сөрөг тоогоор соль болохгүй
+{% endhighlight %}
