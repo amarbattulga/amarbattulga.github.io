@@ -10,6 +10,7 @@ categories: algorithm
 [INCDSESQ - spoj](http://www.spoj.com/problems/INCDSEQ/){:target="_blank"}
 
 N <= 10,000
+
 s1, s2, ..., sn 
 
 s массив доторх яг K урттай ялгаатай өсөх дарааллын тоог ол
@@ -34,7 +35,9 @@ N ширхэг захиалга орж ирсэн, N < 10,000
 
 start: Si -> түрээслэж эхлэх хугацаа, 0 ≤ Si < 1,000,000
 
+
 duration: Di -> түрээслэх хугацаа, 0 < Di < 1,000,000
+
 
 cost: Ci -> түрээсд төлөх үнэ, Ci < 100,000
 
